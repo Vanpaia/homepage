@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+  <progress id="reading-progress-bar" class="progress is-primary is-small reading-tracker-fixed" value="0" max="100">0%</progress>
+  <section 
+    class="hero is-medium is-bold blog-hero"
+    style="--hero-image-url: url('{{ post.image_url }}');">
+
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title has-text-white is-size-1">
+          <span>{{ post.title }}</span>
+        </h1>
+        <br>
+        <h2 class="subtitle has-text-white">
+          <span>{{ post.subtitle }}</span>
+        </h2>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="has-text-grey is-size-7 mb-5">
+          Published on {{ post.formatted_created_at }}
+      </div>
+      <div class="content">
+        <p class="important">
+          {{ body | safe }}
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="section is medium">
+    <div class="container">
+      <div class="subtitle">
+        Related Content
+      </div>
+      <div class="columns is-centered">
+        {% for content in project.related_content %}
+          <div class="column is-one-fifth">
+            {% include '_related_content_card.html' %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

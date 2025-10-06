@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="section">
+      <div class="container">
+        
+        <!-- Project Header -->
+        <div class="block">
+          <h1 class="title is-2">Task Automation Framework</h1>
+          <p class="subtitle is-5 has-text-grey">A flexible Python-based system for scheduling and executing automated workflows</p>
+          <div class="tags mt-4">
+            <span class="tag is-link is-light">Python</span>
+            <span class="tag is-link is-light">Flask</span>
+            <span class="tag is-link is-light">PostgreSQL</span>
+            <span class="tag is-link is-light">Docker</span>
+          </div>
+        </div>
+
+        <hr class="my-6">
+
+        <!-- Overview Section -->
+        <div class="block mb-6">
+          <h2 class="title is-4 mb-4">Overview</h2>
+          <div class="content">
+            <p>
+              This project implements a robust task automation framework designed for managing complex workflows 
+              in production environments. The system provides a REST API for task creation, a scheduler for 
+              execution timing, and a monitoring dashboard for real-time status tracking.
+            </p>
+            <p>
+              Built with scalability in mind, the framework supports distributed task execution, error handling 
+              with automatic retry logic, and comprehensive logging for debugging and audit purposes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Learning Goals Section -->
+        <div class="box has-background-light mb-6">
+          <h2 class="title is-4 mb-4">Learning Goals</h2>
+          <div class="columns">
+            <div class="column">
+              <h3 class="title is-6 has-text-primary">Technical Skills</h3>
+              <div class="content">
+                <ul>
+                  <li>Master asynchronous task processing with Celery</li>
+                  <li>Implement robust error handling and retry mechanisms</li>
+                  <li>Design RESTful APIs following best practices</li>
+                  <li>Optimize database queries for high-volume operations</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <h3 class="title is-6 has-text-primary">System Design</h3>
+              <div class="content">
+                <ul>
+                  <li>Understand distributed system architecture patterns</li>
+                  <li>Practice horizontal scaling strategies</li>
+                  <li>Implement monitoring and observability solutions</li>
+                  <li>Design for fault tolerance and resilience</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Implementation Section -->
+        <div class="block mb-6">
+          <h2 class="title is-4 mb-5">Implementation</h2>
+          
+          <div class="mb-5">
+            <h3 class="title is-5 mb-3">Architecture</h3>
+            <div class="content">
+              <p>
+                The system follows a microservices architecture with three main components: the API server 
+                handles client requests and task creation, the scheduler manages task timing and distribution, 
+                and worker nodes execute tasks in isolation. Communication between components uses Redis as a 
+                message broker, ensuring reliable task delivery even under high load.
+              </p>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <h3 class="title is-5 mb-3">Key Features</h3>
+            <div class="columns is-multiline">
+              <div class="column is-half">
+                <div class="box">
+                  <h4 class="title is-6 mb-2">Task Scheduling</h4>
+                  <p class="is-size-7">
+                    Flexible scheduling system supporting cron expressions, one-time tasks, and recurring patterns 
+                    with timezone awareness.
+                  </p>
+                </div>
+              </div>
+              <div class="column is-half">
+                <div class="box">
+                  <h4 class="title is-6 mb-2">Error Recovery</h4>
+                  <p class="is-size-7">
+                    Automatic retry logic with exponential backoff, dead letter queues for failed tasks, and 
+                    detailed error reporting.
+                  </p>
+                </div>
+              </div>
+              <div class="column is-half">
+                <div class="box">
+                  <h4 class="title is-6 mb-2">Monitoring Dashboard</h4>
+                  <p class="is-size-7">
+                    Real-time task status tracking, execution metrics, and historical performance analytics 
+                    through an intuitive web interface.
+                  </p>
+                </div>
+              </div>
+              <div class="column is-half">
+                <div class="box">
+                  <h4 class="title is-6 mb-2">API Integration</h4>
+                  <p class="is-size-7">
+                    RESTful API with JWT authentication, rate limiting, and comprehensive OpenAPI documentation 
+                    for easy integration.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="title is-5 mb-3">Technology Stack</h3>
+            <div class="columns">
+              <div class="column">
+                <div class="content">
+                  <p class="has-text-weight-semibold mb-2">Backend</p>
+                  <p class="is-size-7">Flask 3.0, SQLAlchemy, Celery, Redis, PostgreSQL 15</p>
+                </div>
+              </div>
+              <div class="column">
+                <div class="content">
+                  <p class="has-text-weight-semibold mb-2">Frontend</p>
+                  <p class="is-size-7">Jinja2 Templates, Bulma CSS, Alpine.js, Chart.js</p>
+                </div>
+              </div>
+              <div class="column">
+                <div class="content">
+                  <p class="has-text-weight-semibold mb-2">Infrastructure</p>
+                  <p class="is-size-7">Docker, Docker Compose, GitHub Actions, pytest</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="box has-background-light mb-6">
+          <h2 class="title is-4 mb-4">Development Progress</h2>
+          <div class="columns">
+            <div class="column">
+              <p class="has-text-weight-semibold mb-2">Core Backend</p>
+              <progress class="progress is-primary" value="95" max="100">95%</progress>
+            </div>
+            <div class="column">
+              <p class="has-text-weight-semibold mb-2">API Endpoints</p>
+              <progress class="progress is-primary" value="85" max="100">85%</progress>
+            </div>
+            <div class="column">
+              <p class="has-text-weight-semibold mb-2">Dashboard UI</p>
+              <progress class="progress is-primary" value="70" max="100">70%</progress>
+            </div>
+            <div class="column">
+              <p class="has-text-weight-semibold mb-2">Documentation</p>
+              <progress class="progress is-primary" value="60" max="100">60%</progress>
+            </div>
+          </div>
+        </div>
+
+        <!-- Challenges & Solutions -->
+        <div class="block mb-6">
+          <h2 class="title is-4 mb-4">Challenges & Solutions</h2>
+          <div class="content">
+            <div class="mb-4">
+              <p class="has-text-weight-semibold">Handling Task Failures Gracefully</p>
+              <p class="is-size-7 has-text-grey">
+                Implemented a comprehensive retry mechanism with exponential backoff and circuit breaker patterns. 
+                Failed tasks are moved to a dead letter queue after exhausting retries, allowing for manual 
+                inspection and reprocessing without blocking the main workflow.
+              </p>
+            </div>
+            <div class="mb-4">
+              <p class="has-text-weight-semibold">Scaling Worker Pool Dynamically</p>
+              <p class="is-size-7 has-text-grey">
+                Developed a load-based autoscaling system that monitors queue depth and worker utilization. 
+                The system automatically spawns additional worker containers when demand increases and scales 
+                down during idle periods to optimize resource usage.
+              </p>
+            </div>
+            <div>
+              <p class="has-text-weight-semibold">Ensuring Task Execution Guarantees</p>
+              <p class="is-size-7 has-text-grey">
+                Implemented distributed locking with Redis to prevent duplicate task execution and ensure 
+                at-most-once semantics. Combined with idempotent task design, this guarantees reliable 
+                execution even in distributed environments.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="notification is-light">
+          <h2 class="title is-4 mb-3">Next Steps</h2>
+          <div class="columns">
+            <div class="column">
+              <div class="content">
+                <p class="has-text-weight-semibold mb-2">Short Term</p>
+                <ul class="is-size-7">
+                  <li>Complete unit test coverage to 90%+</li>
+                  <li>Implement WebSocket support for real-time updates</li>
+                  <li>Add task dependency management</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column">
+              <div class="content">
+                <p class="has-text-weight-semibold mb-2">Long Term</p>
+                <ul class="is-size-7">
+                  <li>Multi-tenancy support with resource isolation</li>
+                  <li>Plugin system for custom task types</li>
+                  <li>Kubernetes deployment configuration</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+{% endblock %}

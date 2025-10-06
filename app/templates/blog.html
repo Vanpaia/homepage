@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- Main Content -->
+  <div class="main-content">
+    <section class="hero is-medium is-hero-bar">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            Blogposts 
+          </h1>
+          <p class="subtitle">
+            The following are thoughts or ramblings about various topics.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        {% for post in posts %}
+          {% include '_blog_card_horizontal.html' %}
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+{% endblock %}

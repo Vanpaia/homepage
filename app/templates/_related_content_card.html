@@ -1,0 +1,29 @@
+{% if content.type == "blogpost" %}
+  <a href="{{ url_for('main.blogpost', post_id=content.object.id, post_slug=content.object.slug) }}"  class="card card-hover-effect mt-4">
+{% else %}
+  <a href="{{ url_for('main.portfolio', project_id=content.object.id, project_slug=content.object.slug) }}"  class="card card-hover-effect mt-4">
+{% endif %}
+    <div class="card-content">
+      <div class="columns is-gapless is-vcentered"> 
+        <div class="column is-one-quarter-desktop is-one-third-tablet is-full-mobile mr-2">
+          <figure class="media-left">
+            <p class="image is-64x64">
+              <span class="icon is-large has-text-primary">
+                {% if content.type == "blogpost" %}
+                  <i class="fas fa-i-cursor"></i>
+                {% else %}
+                  <i class="fas fa-terminal"></i>
+                {% endif %}
+              </span>
+            </p>
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <time datetime="{{ content.object.created_at.strftime('%Y-%m-%d') }}"><i>{{ content.object.created_at.strftime('%Y-%m-%d') }}</i></time>
+            <p class="title is-4">{{ content.object.title }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>

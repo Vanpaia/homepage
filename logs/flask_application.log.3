@@ -1,0 +1,101 @@
+2025-10-05 13:42:53,616 ERROR: Exception on /portfolio [GET] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/app/main/routes.py", line 32, in portfolio
+    return render_template('portfolio.html',projects=projects, title='Portfolio')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/hagen/Projects/homepage/app/templates/portfolio.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/hagen/Projects/homepage/app/templates/base.html", line 59, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/app/templates/portfolio.html", line 23, in block 'content'
+    {% include '_project_card.html' %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/app/templates/_project_card.html", line 7, in top-level template code
+    <img src="{{ technology.image_url}}" />
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'technology' is undefined
+2025-10-05 13:43:12,155 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 13:43:49,888 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 13:44:09,780 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 13:44:30,156 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 13:44:51,624 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 13:45:12,517 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 13:45:24,198 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 13:45:44,602 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 13:46:25,711 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 13:46:40,953 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 13:47:09,388 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 13:47:24,776 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 13:50:09,686 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 13:55:43,117 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 14:04:14,411 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 14:04:18,428 ERROR: Exception on /portfolio [GET] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/app/main/routes.py", line 32, in portfolio
+    return render_template('portfolio.html',projects=projects, title='Portfolio')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/hagen/Projects/homepage/app/templates/portfolio.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/hagen/Projects/homepage/app/templates/base.html", line 17, in template
+    <a class="navbar-item is-primary" href="{{ url_for(main.index') }}"
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateSyntaxError: expected token ',', got 'string'
+2025-10-05 14:04:41,726 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 14:05:37,283 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 14:05:55,091 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 14:06:22,258 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 14:06:45,209 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 14:07:38,021 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 14:08:25,921 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 14:08:43,626 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 14:12:09,953 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]

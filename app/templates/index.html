@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- Main Content -->
+  <!-- Main Content -->
+  <div class="main-content">
+    <section class="hero is-medium is-hero-bar">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            hagen.social
+          </h1>
+          <p class="subtitle">
+            It's me, Hagen, being social.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section is medium">
+      <div class="container">
+        <div class="content">
+          <p>
+            You've reached my landing page. I've created this central connection to the outside world, for the thoughts that are in my programs and the code that is in my heart.
+          </p>
+          <p> I am a policy analyst, following political and legal developments worldwide. I am passionate about tech and sustainability, which are increasingly shaping our world. I like to share that passion through sharing my projects and thoughts. </p> </div>
+      </div>
+    </section>
+    <section class="section is medium">
+      <div class="container">
+        <div class="title">
+          Deployed Projects
+        </div>
+        <nav class="panel">
+          <p class="panel-heading">Currently online <i class="fa fa-cloud" aria-hidden="true"></i></p>
+          <div class="panel-block">
+            <p class="control has-icons-left">
+              <input class="input" type="text" placeholder="Search" />
+              <span class="icon is-left">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+            </p>
+          </div>
+          {% for project in deployed_projects %}
+            <a class="panel-block" href="{{ project.deployment_url }}">
+              <span class="panel-icon">
+                <i class="fa fa-link" aria-hidden="true"></i>
+              </span>
+              {{ project.title }} - {{ project.subtitle }}
+            </a>
+          {% endfor %}
+        </nav>
+      </div>
+    </section>
+    <section class="section is medium">
+      <div class="container">
+        <div class="title">
+          Latest Blogposts
+        </div>
+          <div class="columns is-centered">
+          {% for post in latest_posts %}
+          <div class="column is-one-third">
+            {% include '_blog_card_vertical.html' %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+    <section class="section is medium">
+      <div class="container">
+        <div class="title">
+          Featured Projects
+        </div>
+          <div class="columns is-centered">
+          {% for project in featured_projects %}
+          <div class="column is-one-third">
+            {% include '_project_card.html' %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

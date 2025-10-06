@@ -1,0 +1,122 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html class="has-aside-left has-aside-mobile-transition has-navbar-fixed-top has-aside-expanded" lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>{{ title or "Flask + Bulma" }}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+   <div id="app">
+      <!-- Navbar -->
+      <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class = "navbar-brand">
+          <a class="navbar-item" href="{{ url_for('main.index') }}">
+            <span class="button is-primary">hagen.</span>
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarApplication">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id = "navbarApplication" class = "navbar-menu">
+          <div class = "navbar-start">
+             <a class = "navbar-item" href = "{{ url_for('main.index') }}">Home</a>
+             <a class = "navbar-item" href = "{{ url_for('main.blog') }}">Blog</a>
+             <a class = "navbar-item" href = "{{ url_for('main.portfolio') }}">Portfolio</a>
+             <div class = "navbar-item has-dropdown is-hoverable">
+                <a class = "navbar-link" href = "#">Deployments</a>
+                <div class = "navbar-dropdown is-boxed">
+                  {% for project in navbar_projects %}
+                    <a class="navbar-item" href="{{ project.deployment_url }}">{{ project.title }}</a>                           
+                  {% endfor %}
+                </div>
+             </div>
+           </div>
+            
+           <div class = "navbar-end">
+             <div class = "navbar-item">
+                <div class = "buttons">
+                   <a class="button is-primary">
+                     <strong>About</strong>
+                   </a>
+                </div>
+             </div>
+          </div>
+       </div>
+    </nav>
+   {% block content %}{% endblock %}
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="content px-6">
+        <div class="columns is-vcentered">
+          <div class="column">
+          </div>
+          <div class="column is-one-third">
+            <p class="subtitle">
+              Hagen
+            </p>
+            <p>
+              I am a policy analyst, following political and legal developments worldwide. I am passionate about tech and sustainability, which are increasingly shaping our world. I like to share that passion through sharing my projects and thoughts.
+
+              Feel free to connect with me!
+            </p>
+          </div>
+          <div class="column has-text-centered">
+            <a class="button is-primary" href="https://github.com/Vanpaia">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Connect on GitHub</span>
+            </a>
+          </div>
+          <div class="column has-text-centered">
+            <a class="button is-primary" href="https://www.linkedin.com/in/hschlotzhauer/">
+                <span class="icon">
+                  <i class="fab fa-linkedin"></i>
+                </span>
+                <span>Connect on LinkedIn</span>
+            </a>
+          </div>
+          <div class="column"></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get the progress bar element
+        const progressBar = document.getElementById('reading-progress-bar');
+        
+        // Function to calculate and update progress
+        const updateProgressBar = () => {
+            // Total document height that can be scrolled
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            
+            // Current scroll position from the top
+            const scrolled = window.scrollY;
+            
+            // Calculate the percentage read
+            if (totalHeight > 0) {
+                const progress = (scrolled / totalHeight) * 100;
+                progressBar.value = progress;
+            } else {
+                // Handle cases where the content is smaller than the viewport
+                progressBar.value = 100;
+            }
+        };
+
+        // Attach the function to the scroll event
+        window.addEventListener('scroll', updateProgressBar);
+
+        // Run once on load to initialize
+        updateProgressBar();
+    });
+    </script>
+</body>
+</html>

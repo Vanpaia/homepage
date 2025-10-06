@@ -1,0 +1,22 @@
+<a href="{{ url_for('main.blogpost', post_id=post.id, post_slug=post.slug) }}"  class="card card-hover-effect mt-4">
+  <div class="card-content">
+    <div class="columns is-gapless"> 
+      <div class="column is-one-quarter-desktop is-one-third-tablet is-full-mobile mr-2">
+        <figure class="image is-3by2">
+          <img
+            src="{{ post.thumbnail_url }}"
+            alt="{{ post.thumbnail }}"
+          />
+        </figure>
+      </div>
+      <div class="column is-three-quarters-desktop is-two-thirds-tablet is-full-mobile pl-4">
+        <time datetime="{{ post.created_at.strftime('%Y-%m-%d') }}"><i>{{ post.created_at.strftime('%A, %d %B %Y') }}</i></time>
+        <p class="title is-4">{{ post.title }}</p>
+        <p class="subtitle is-6">{{ post.subtitle }}</p>
+        <p>
+          {{ post.extract }}
+        </p>
+      </div>
+    </div>
+  </div>
+</a>

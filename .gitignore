@@ -1,0 +1,5 @@
+venv/
+migrations/
+devdatabase.db
+.env
+config.ini

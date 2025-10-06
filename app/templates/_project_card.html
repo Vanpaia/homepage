@@ -1,0 +1,20 @@
+<a href="{{ url_for('main.project', project_id=project.id, project_slug=project.slug) }}"  class="card card-hover-effect mt-4">
+  <div class="card">
+    <div class="card-content has-text-centered">
+      <div class="is-widget-label">
+        <p class="title">{{ project.title }}</p>
+        <p class="subtitle">{{ project.subtitle}}</p>
+        <p class="has-text-justified">{{ project.extract }}</p>
+        <br>
+        <div class="tags is-flex is-centered">
+          {% for language in project.languages %}
+            <figure class="image is-16x16">
+              <img src="{{ language.image_url}}" />
+            </figure>
+            <span class="tag is-link is-light">{{ language.title }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</a>

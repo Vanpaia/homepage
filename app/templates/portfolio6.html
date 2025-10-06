@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="section">
+    <div class="container">
+
+      <!-- Project Title -->
+      <h1 class="title is-2 has-text-centered">🚀 My Coding Project Overview</h1>
+      <p class="subtitle has-text-centered">A playground of Bulma elements for description, goals, and implementation details.</p>
+
+      <!-- Hero Banner -->
+      <section class="hero is-info is-bold mb-6">
+        <div class="hero-body">
+          <p class="title">Learning Goals</p>
+          <p class="subtitle">What I want to achieve with this project</p>
+        </div>
+      </section>
+
+      <!-- Columns with Cards -->
+      <div class="columns">
+        <div class="column">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">💡 Understanding Flask</p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                Learn how to structure backend routes and integrate them with Jinja templates.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">🎨 Styling with Bulma</p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                Explore Bulma components to create clean, responsive UIs.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">🛠️ Implementation</p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                Practice writing Python code that powers this project.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs is-toggle is-centered mt-6">
+        <ul>
+          <li class="is-active"><a>Overview</a></li>
+          <li><a>Code Snippets</a></li>
+          <li><a>Challenges</a></li>
+          <li><a>Next Steps</a></li>
+        </ul>
+      </div>
+
+      <!-- Notification Box -->
+      <div class="notification is-warning">
+        ⚠️ Remember to keep your project modular and easy to test!
+      </div>
+
+      <!-- Message Component -->
+      <article class="message is-primary">
+        <div class="message-header">
+          <p>Project Description</p>
+          <button class="delete" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+          This project is a web app that allows users to track their coding progress and
+          learn new concepts interactively.
+        </div>
+      </article>
+
+      <!-- Table -->
+      <h2 class="title is-4 mt-5">📊 Features Checklist</h2>
+      <table class="table is-striped is-fullwidth">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>User authentication</td>
+            <td><span class="tag is-success">Complete</span></td>
+          </tr>
+          <tr>
+            <td>Progress tracking</td>
+            <td><span class="tag is-warning">In Progress</span></td>
+          </tr>
+          <tr>
+            <td>Leaderboard</td>
+            <td><span class="tag is-danger">Not Started</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Progress Bar -->
+      <h2 class="title is-4 mt-5">⏳ Project Completion</h2>
+      <progress class="progress is-info" value="45" max="100">45%</progress>
+
+      <!-- Media Object -->
+      <article class="media mt-6">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img src="https://bulma.io/images/placeholders/128x128.png">
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Developer Notes</strong>
+              <br>
+              Flask and Bulma work nicely together. Using Jinja templates makes rendering dynamic content straightforward.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Accordion-like using Bulma's panel -->
+      <nav class="panel mt-6">
+        <p class="panel-heading">📚 Resources</p>
+        <a class="panel-block is-active">Flask Documentation</a>
+        <a class="panel-block">Bulma Documentation</a>
+        <a class="panel-block">Jinja Templating</a>
+      </nav>
+
+    </div>
+  </section>
+{% endblock %}

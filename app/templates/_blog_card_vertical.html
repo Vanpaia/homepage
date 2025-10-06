@@ -1,0 +1,22 @@
+<a href="{{ url_for('main.blogpost', post_id=post.id, post_slug=post.slug) }}"  class="card card-hover-effect mt-4">
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-126x126">
+        <img
+          src="{{ post.image_url }}"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content has-text-centered">
+      <time datetime="post.created_at.strftime('%Y-%M-%d')"><i>{{ post.formatted_created_at }}</i></time>
+      <div class="is-widget-label">
+      <h2 class="subtitle is-spaced">
+        {{ post.title}}
+      </h2>
+      <p class="has-text-justified">
+        {{ post.extract }}
+      </p>
+    </div>
+  </div>
+</a>

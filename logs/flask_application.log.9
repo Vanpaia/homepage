@@ -1,0 +1,129 @@
+2025-10-02 09:48:55,666 ERROR: Exception on /portfolio/1 [GET] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/sql/sqltypes.py", line 1709, in _object_value_for_elem
+    return self._object_lookup[elem]  # type: ignore[return-value]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'completed'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/app/main/routes.py", line 53, in project
+    print(project_data)
+  File "/home/hagen/Projects/homepage/app/models.py", line 363, in __str__
+    return f'{self.id} {self.title} {self.subtitle} {self.status} {self.extract} {self.github_url} {self.deployment_url} {self.image} {self.featured_order} {self.sections} {self.features} {self.tags} {self.technologies}'
+                                                                                                                                                                             ^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 569, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 1096, in get
+    value = self._fire_loader_callables(state, key, passive)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 1131, in _fire_loader_callables
+    return self.callable_(state, passive)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/strategies.py", line 978, in _load_for_state
+    return self._emit_lazyload(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/strategies.py", line 1145, in _emit_lazyload
+    result = result.unique().scalars().all()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 1774, in all
+    return self._allrows()
+           ^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
+    rows = self._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 1681, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 2275, in _fetchall_impl
+    return list(self.iterator)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 220, in chunks
+    fetch = cursor._raw_all_rows()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
+    return [make_row(row) for row in rows]
+            ^^^^^^^^^^^^^
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
+  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/sql/sqltypes.py", line 1829, in process
+    value = self._object_value_for_elem(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/sql/sqltypes.py", line 1711, in _object_value_for_elem
+    raise LookupError(
+LookupError: 'completed' is not among the defined enum values. Enum name: developmentstatus. Possible values: PLANNED, IN_PROGRESS, COMPLETED, ON_HOLD
+2025-10-02 09:50:42,705 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 09:54:27,756 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:03:05,937 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:03:17,898 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:15:15,586 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:15:53,272 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:15:59,003 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:16:58,785 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:18:17,224 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:18:33,063 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:18:40,146 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:22:17,465 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:22:27,793 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:23:23,852 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:25:04,445 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:26:09,232 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:27:33,022 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:27:58,468 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:28:23,843 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:35:58,957 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+2025-10-02 15:52:10,531 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:48]
+2025-10-02 15:52:13,484 ERROR: Exception on /portfolio/1 [GET] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/app/main/routes.py", line 56, in project
+    return render_template('project.html', project=project_data, title='Portfolio')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/hagen/Projects/homepage/app/templates/project.html", line 24, in template
+    {{ section.render_html() | render_jinja }}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.TemplateAssertionError: No filter named 'render_jinja'.

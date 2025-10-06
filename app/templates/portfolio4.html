@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="section is-paddingless">
+      <div class="container is-max-desktop">
+
+          <section class="hero is-medium is-light is-bold has-text-centered mb-6">
+              <div class="hero-body">
+                  <p class="title is-2 has-text-dark">
+                      Project Codename: Zenith
+                  </p>
+                  <p class="subtitle is-5 has-text-grey-dark">
+                      A high-performance asynchronous data pipeline built on modern Python and Bulma.
+                  </p>
+                  <div class="tags is-centered is-size-6 mt-4">
+                      <span class="tag is-primary is-light">Status: Deployed</span>
+                      <span class="tag is-info is-light">Stack: Flask & PostgreSQL</span>
+                      <span class="tag is-success is-light">Last Update: Oct 2024</span>
+                  </div>
+              </div>
+          </section>
+
+          <div class="columns is-centered">
+              
+              <div class="column is-10">
+                  <div class="content">
+                      <h3 class="title is-4" id="overview">Project Overview</h3>
+                      <p>
+                          This system was developed to solve the challenge of processing millions of concurrent financial transactions. The architecture is deliberately decoupled, emphasizing microservices principles to ensure scalability and fault tolerance. Our primary design goal was achieving a **P99 latency below 10ms**.
+                      </p>
+                  </div>
+              </div>
+          </div>
+
+          <h3 class="title is-4 has-text-dark-light mt-5" id="goals">Key Objectives & Modules</h3>
+          
+          <div class="tile is-ancestor mb-6">
+              
+              <div class="tile is-parent">
+                  <div class="tile is-child box has-background-white-ter">
+                      <p class="title is-5"><i class="fas fa-bullseye has-text-info mr-2"></i> Latency</p>
+                      <p class="is-size-6 has-text-grey">Ensure all core API endpoints respond in under 50ms, leveraging aggressive caching.</p>
+                  </div>
+              </div>
+              
+              <div class="tile is-parent">
+                  <div class="tile is-child box has-background-white-ter">
+                      <p class="title is-5"><i class="fas fa-sitemap has-text-primary mr-2"></i> Architecture</p>
+                      <p class="is-size-6 has-text-grey">Implement the Command Query Responsibility Segregation (CQRS) pattern.</p>
+                  </div>
+              </div>
+              
+              <div class="tile is-parent">
+                  <div class="tile is-child box has-background-white-ter">
+                      <p class="title is-5"><i class="fas fa-graduation-cap has-text-success mr-2"></i> Learning</p>
+                      <p class="is-size-6 has-text-grey">Master Docker Compose for reproducible, environment-agnostic deployment.</p>
+                  </div>
+              </div>
+          </div>
+
+          <h3 class="title is-4 has-text-dark-light mt-6" id="implementation">Implementation Details</h3>
+          
+          <div class="tabs is-boxed is-small mb-4">
+              <ul>
+                  <li class="is-active"><a href="#arch-tab"><span>Architecture</span></a></li>
+                  <li><a href="#code-tab"><span>Core Code Snippets</span></a></li>
+                  <li><a href="#test-tab"><span>Testing Strategy</span></a></li>
+              </ul>
+          </div>
+          
+          <div id="arch-tab" class="box">
+              <div class="content">
+                  <h4 class="title is-5">Data Flow and Services</h4>
+                  <p>The system comprises three main services: an ingestion worker (Celery), a state management service (Redis), and a reporting API (Flask). Data flows uni-directionally to prevent deadlocks.</p>
+                  <pre class="has-background-grey-dark"><code class="has-text-white">
+  # Service Composition
+  [Ingestion Worker] -> [Redis Queue] -> [Reporting API]
+                  </code></pre>
+              </div>
+          </div>
+          
+          <div id="code-tab" class="box is-hidden">
+               <h4 class="title is-5">Error Handling Logic</h4>
+               <pre class="has-background-grey-dark"><code class="has-text-white">
+  @celery.task(bind=True, max_retries=5)
+  def process_job(self, data):
+      try:
+          # Process logic...
+          return True
+      except Exception as exc:
+          raise self.retry(exc=exc, countdown=30)
+               </code></pre>
+          </div>
+          
+          <div id="test-tab" class="box is-hidden">
+              <h4 class="title is-5">Continuous Integration & Test Coverage</h4>
+              <div class="notification is-success is-light">
+                  <p>We mandate 100% test coverage for all critical path services. CI pipeline runs on GitHub Actions.</p>
+              </div>
+          </div>
+          
+      </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{
+    "include": ["app", "*.py"],
+    "exclude": ["**/__pycache__"],
+    "venvPath": ".",
+    "venv": "venv",
+    "extraPaths": [
+        "./app",
+        "./venv/lib/python3.12/site-packages"
+    ],
+}

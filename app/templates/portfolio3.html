@@ -1,0 +1,367 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="section">
+      <div class="container">
+        <!-- Hero Header -->
+        <div class="hero is-info is-bold">
+          <div class="hero-body">
+            <p class="title">
+              My Awesome Coding Project
+            </p>
+            <p class="subtitle">
+              A comprehensive overview of features, goals, and implementation
+            </p>
+          </div>
+        </div>
+
+        <!-- Project Stats -->
+        <div class="box mt-5">
+          <div class="columns is-multiline">
+            <div class="column is-3">
+              <div class="notification is-primary has-text-centered">
+                <p class="heading">Lines of Code</p>
+                <p class="title">2,547</p>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="notification is-link has-text-centered">
+                <p class="heading">Commits</p>
+                <p class="title">183</p>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="notification is-success has-text-centered">
+                <p class="heading">Contributors</p>
+                <p class="title">4</p>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="notification is-warning has-text-centered">
+                <p class="heading">Stars</p>
+                <p class="title">127</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs is-boxed is-medium mt-5">
+          <ul>
+            <li class="is-active">
+              <a>
+                <span class="icon is-small"><i class="fas fa-book" aria-hidden="true"></i></span>
+                <span>Overview</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span class="icon is-small"><i class="fas fa-bullseye" aria-hidden="true"></i></span>
+                <span>Goals</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span class="icon is-small"><i class="fas fa-code" aria-hidden="true"></i></span>
+                <span>Implementation</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span class="icon is-small"><i class="fas fa-chart-line" aria-hidden="true"></i></span>
+                <span>Progress</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="columns">
+          <!-- Left Column -->
+          <div class="column is-8">
+            <!-- Description Card -->
+            <div class="card mb-5">
+              <header class="card-header">
+                <p class="card-header-title">
+                  Project Description
+                </p>
+                <button class="card-header-icon" aria-label="more options">
+                  <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  <p>
+                    This project demonstrates advanced concepts in web development, including responsive design,
+                    API integration, and modern JavaScript frameworks. The application provides users with an
+                    intuitive interface for managing complex data structures.
+                  </p>
+                  <div class="tags mt-4">
+                    <span class="tag is-info">Python</span>
+                    <span class="tag is-success">Flask</span>
+                    <span class="tag is-link">JavaScript</span>
+                    <span class="tag is-warning">REST API</span>
+                    <span class="tag is-danger">PostgreSQL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Learning Goals -->
+            <div class="card mb-5">
+              <header class="card-header has-background-primary">
+                <p class="card-header-title has-text-white">
+                  Learning Goals
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  <div class="message is-info">
+                    <div class="message-header">
+                      <p>Primary Objectives</p>
+                    </div>
+                    <div class="message-body">
+                      <ul>
+                        <li>Master RESTful API design patterns</li>
+                        <li>Implement secure authentication systems</li>
+                        <li>Optimize database queries for performance</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="message is-success">
+                    <div class="message-header">
+                      <p>Secondary Objectives</p>
+                    </div>
+                    <div class="message-body">
+                      <ul>
+                        <li>Learn deployment with Docker containers</li>
+                        <li>Practice test-driven development</li>
+                        <li>Explore CI/CD pipelines</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Implementation Details -->
+            <div class="box">
+              <h2 class="title is-4">Implementation Details</h2>
+              <div class="content">
+                <article class="media">
+                  <figure class="media-left">
+                    <p class="image is-64x64">
+                      <span class="icon is-large has-text-info">
+                        <i class="fas fa-3x fa-server"></i>
+                      </span>
+                    </p>
+                  </figure>
+                  <div class="media-content">
+                    <div class="content">
+                      <p>
+                        <strong>Backend Architecture</strong>
+                        <br>
+                        Built with Flask framework using blueprints for modular design. Implements SQLAlchemy ORM
+                        for database operations with migration support via Alembic.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="media">
+                  <figure class="media-left">
+                    <p class="image is-64x64">
+                      <span class="icon is-large has-text-success">
+                        <i class="fas fa-3x fa-palette"></i>
+                      </span>
+                    </p>
+                  </figure>
+                  <div class="media-content">
+                    <div class="content">
+                      <p>
+                        <strong>Frontend Design</strong>
+                        <br>
+                        Responsive UI built with Bulma CSS framework. Jinja2 templates provide server-side rendering
+                        with minimal JavaScript for enhanced interactions.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="column is-4">
+            <!-- Progress Panel -->
+            <div class="panel is-success mb-5">
+              <p class="panel-heading">
+                Development Progress
+              </p>
+              <div class="panel-block">
+                <div class="container">
+                  <p class="mb-2">Backend Development</p>
+                  <progress class="progress is-success" value="90" max="100">90%</progress>
+                  
+                  <p class="mb-2 mt-3">Frontend Design</p>
+                  <progress class="progress is-info" value="75" max="100">75%</progress>
+                  
+                  <p class="mb-2 mt-3">Testing Coverage</p>
+                  <progress class="progress is-warning" value="60" max="100">60%</progress>
+                  
+                  <p class="mb-2 mt-3">Documentation</p>
+                  <progress class="progress is-danger" value="40" max="100">40%</progress>
+                </div>
+              </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="box mb-5">
+              <h3 class="title is-5">Technology Stack</h3>
+              <div class="menu">
+                <p class="menu-label">
+                  Backend
+                </p>
+                <ul class="menu-list">
+                  <li><a>Flask 2.3.x</a></li>
+                  <li><a>SQLAlchemy</a></li>
+                  <li><a>PostgreSQL</a></li>
+                </ul>
+                <p class="menu-label">
+                  Frontend
+                </p>
+                <ul class="menu-list">
+                  <li><a>Bulma CSS</a></li>
+                  <li><a>Jinja2</a></li>
+                  <li><a>Vanilla JS</a></li>
+                </ul>
+                <p class="menu-label">
+                  DevOps
+                </p>
+                <ul class="menu-list">
+                  <li><a>Docker</a></li>
+                  <li><a>GitHub Actions</a></li>
+                  <li><a>Pytest</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Status Timeline -->
+            <div class="notification is-light">
+              <h3 class="title is-6">Recent Updates</h3>
+              <div class="timeline is-small">
+                <div class="content">
+                  <p class="has-text-grey-light is-size-7">2 days ago</p>
+                  <p class="is-size-7">✅ Implemented user authentication</p>
+                  
+                  <p class="has-text-grey-light is-size-7 mt-3">5 days ago</p>
+                  <p class="is-size-7">🚀 Deployed to staging environment</p>
+                  
+                  <p class="has-text-grey-light is-size-7 mt-3">1 week ago</p>
+                  <p class="is-size-7">📝 Added API documentation</p>
+                  
+                  <p class="has-text-grey-light is-size-7 mt-3">2 weeks ago</p>
+                  <p class="is-size-7">🎨 Redesigned landing page</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Cards Grid -->
+        <div class="columns is-multiline mt-5">
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <div class="has-background-primary-light" style="height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <span class="icon is-large has-text-primary">
+                      <i class="fas fa-3x fa-lock"></i>
+                    </span>
+                  </div>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-5">Security</p>
+                  </div>
+                </div>
+                <div class="content">
+                  JWT-based authentication with bcrypt password hashing and CSRF protection.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <div class="has-background-info-light" style="height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <span class="icon is-large has-text-info">
+                      <i class="fas fa-3x fa-database"></i>
+                    </span>
+                  </div>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-5">Data Management</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Efficient database schema with indexing and query optimization strategies.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <div class="has-background-success-light" style="height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <span class="icon is-large has-text-success">
+                      <i class="fas fa-3x fa-mobile-alt"></i>
+                    </span>
+                  </div>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-5">Responsive</p>
+                  </div>
+                </div>
+                <div class="content">
+                  Mobile-first design approach ensuring seamless experience across all devices.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="notification is-primary is-light mt-5">
+          <div class="columns is-vcentered">
+            <div class="column">
+              <h3 class="title is-4">Want to explore the code?</h3>
+              <p class="subtitle is-6">Feel free to check out the repository of the project!</p>
+            </div>
+            <div class="column is-narrow">
+              <button class="button is-primary is-large">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>View on GitHub</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

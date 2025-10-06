@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="section is-medium">
+      <div class="container">
+
+          <section class="hero is-small is-light is-bold mb-6">
+              <div class="hero-body">
+                  <p class="title is-3 has-text-dark">
+                      <span class="icon is-medium"><i class="fas fa-microchip"></i></span>
+                      Project Codebase Documentation
+                  </p>
+                  <p class="subtitle is-6 has-text-grey">
+                      Focused on efficiency, readability, and modern tooling.
+                  </p>
+              </div>
+          </section>
+
+          <div class="columns is-variable is-8">
+              
+              <div class="column is-two-thirds">
+                  <h2 class="title is-4 has-text-info" id="description">Core Project Description</h2>
+                  
+                  <div class="box">
+                      <div class="content">
+                          <p>
+                              This application is an **asynchronous job processing queue** built to handle high-volume data streams. Its primary innovation lies in its failure-recovery mechanism, which minimizes data loss during unexpected service interruptions.
+                          </p>
+                          
+                          <article class="media p-3 has-background-white-ter">
+                              <div class="media-left">
+                                  <figure class="image is-48x48">
+                                      <img class="is-rounded" src="https://via.placeholder.com/96x96?text=DEV" alt="Developer Avatar">
+                                  </figure>
+                              </div>
+                              <div class="media-content">
+                                  <p class="title is-6 mb-1">Project Lead: Jane Doe</p>
+                                  <p class="subtitle is-7">Developed over 4 sprints | Last reviewed: Oct 2024</p>
+                              </div>
+                          </article>
+                          
+                          <h3 class="subtitle is-5 mt-4">Technologies Used:</h3>
+                          <div class="tags are-large">
+                              <span class="tag is-primary is-light">Python (3.11)</span>
+                              <span class="tag is-danger">Celery</span>
+                              <span class="tag is-warning is-light">Redis</span>
+                              <span class="tag is-info">Docker</span>
+                              <span class="tag is-success">Bulma CSS</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="column is-one-third">
+                  <h2 class="title is-4 has-text-link">Status & Navigation</h2>
+                  
+                  <article class="panel is-link">
+                      <p class="panel-heading">Documentation Sections</p>
+                      <div class="panel-block">
+                          <p class="control has-icons-left">
+                              <input class="input is-small" type="text" placeholder="Search documentation">
+                              <span class="icon is-left"><i class="fas fa-search"></i></span>
+                          </p>
+                      </div>
+                      <a class="panel-block is-active" href="#architecture">
+                          <span class="panel-icon"><i class="fas fa-sitemap"></i></span>
+                          System Architecture
+                      </a>
+                      <a class="panel-block" href="#deployment">
+                          <span class="panel-icon"><i class="fas fa-cloud-upload-alt"></i></span>
+                          Deployment Guide
+                      </a>
+                      <a class="panel-block" href="#testing">
+                          <span class="panel-icon"><i class="fas fa-flask"></i></span>
+                          Testing & QA Reports
+                      </a>
+                      <label class="panel-block">
+                          <input type="checkbox" checked>
+                          Track Issues Live
+                      </label>
+                  </article>
+              </div>
+          </div>
+
+          <hr>
+
+          <h2 class="title is-4 has-text-primary" id="architecture">System Architecture & Modules</h2>
+
+          <div class="tile is-ancestor">
+              <div class="tile is-parent is-4">
+                  <article class="tile is-child box has-background-light">
+                      <p class="title is-5"><i class="fas fa-database mr-2"></i> Data Integrity</p>
+                      <p class="subtitle is-6">Uses atomic transactions to prevent partial updates.</p>
+                  </article>
+              </div>
+              <div class="tile is-parent is-4">
+                  <article class="tile is-child box has-background-light">
+                      <p class="title is-5"><i class="fas fa-cubes mr-2"></i> Modular Code</p>
+                      <p class="subtitle is-6">Separated into three distinct services for better scaling.</p>
+                  </article>
+              </div>
+              <div class="tile is-parent is-4">
+                  <article class="tile is-child box has-background-light">
+                      <p class="title is-5"><i class="fas fa-rocket mr-2"></i> Performance</p>
+                      <p class="subtitle is-6">Averages 2,500 jobs processed per second.</p>
+                  </article>
+              </div>
+          </div>
+          
+          <hr>
+
+          <h2 class="title is-4 has-text-danger" id="deployment">Deployment Strategy</h2>
+          
+          <article class="message is-danger">
+              <div class="message-header">
+                  <p>Deployment Command</p>
+              </div>
+              <div class="message-body has-background-white-ter">
+                  <p class="content">Execute this command in the root directory:</p>
+                  <pre><code>docker compose up --build -d</code></pre>
+              </div>
+          </article>
+
+          <h3 class="subtitle is-5 mt-5" id="testing">Testing Summary</h3>
+          <div class="notification is-warning is-light">
+              <p><strong>Warning:</strong> Continuous Integration (CI) is required to run all unit tests before merging to the `main` branch. Ensure coverage remains above 95%.</p>
+          </div>
+
+      </div>
+  </section>
+{% endblock %}
