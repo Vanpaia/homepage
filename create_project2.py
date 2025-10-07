@@ -43,14 +43,7 @@ This project serves as an introduction to JavaScript for me. I realised I need J
     db.session.commit()
 
     ''' 
-    project = Project.query.filter_by(id=4).first()
-    project.featured_order=1
+    tech = Technology.query.filter_by(title="JavaScript 18.19.x").first()
+    tech.title = "JavaScript (ES2021)"
     db.session.commit()
-
-
-
-
-
-
-
 
