@@ -2,6 +2,9 @@
   <div class="card">
     <div class="card-content has-text-centered">
       <div class="is-widget-label">
+        <div class="has-text-right mb-4">
+          <span class="{{ project.status_badge_color }}">{{ project.status.display_title }}</span>
+        </div>
         <p class="title">{{ project.title }}</p>
         <p class="subtitle">{{ project.subtitle}}</p>
         <p class="has-text-justified">{{ project.extract }}</p>

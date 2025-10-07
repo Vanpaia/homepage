@@ -1,5 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# Virtual environment
 venv/
+.venv/
+
+# Logs and databases
 migrations/
+*.log
+*.sqlite
+*.db
 devdatabase.db
+
+# Local logs
+logs/
+
+# Secrets and config
 .env
 config.ini

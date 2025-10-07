@@ -17,60 +17,66 @@
             </div>
           </div>
           <!-- Overview Section -->
-          <div class="block mb-6">
-            <h2 class="title is-4 mb-4">Overview</h2>
-            <div class="content">
-              {% for section in project.section_overview %}
-                {{ section.render_html() | render_jinja }}
-              {% endfor %}
-            </div>
-          </div>
-          <!-- Learning Goals -->
-          <div class="card mb-5">
-            <header class="card-header has-background-primary">
-              <p class="card-header-title has-text-white">
-                Goals
-              </p>
-            </header>
-            <div class="card-content">
+          {% if project.section_overview %}
+            <div class="block mb-6">
+              <h2 class="title is-4 mb-4">Overview</h2>
               <div class="content">
-                {% for section in project.section_goals %}
-                  <div class="message is-dark">
-                    <div class="message-header">
-                      <p>{{ section.title }}</p>
-                    </div>
-                    <div class="message-body">
-                      {{ section.render_html() | render_jinja }}
-                    </div>
-                  </div>
+                {% for section in project.section_overview %}
+                  {{ section.render_html() | render_jinja }}
                 {% endfor %}
               </div>
             </div>
-          </div>
-          <!-- Implementation Details -->
-          <h2 class="title is-4">Implementation Details</h2>
-          <div class="content">
-            {% for section in project.section_implementation %}
-              <article class="media">
-                <figure class="media-left">
-                  <p class="image is-64x64">
-                    <span class="icon is-large has-text-primary">
-                      <i class="{{ section.icon }}"></i>
-                    </span>
-                  </p>
-                </figure>
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <strong>{{ section.title }} </strong>
-                    </p>
-                      {{ section.render_html() | render_jinja }}
-                  </div>
+          {% endif %}
+          <!-- Learning Goals -->
+          {% if project.section_goals %}
+            <div class="card mb-5">
+              <header class="card-header has-background-primary">
+                <p class="card-header-title has-text-white">
+                  Goals
+                </p>
+              </header>
+              <div class="card-content">
+                <div class="content">
+                  {% for section in project.section_goals %}
+                    <div class="message is-dark">
+                      <div class="message-header">
+                        <p>{{ section.title }}</p>
+                      </div>
+                      <div class="message-body">
+                        {{ section.render_html() | render_jinja }}
+                      </div>
+                    </div>
+                  {% endfor %}
                 </div>
-              </article>
-            {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+          <!-- Implementation Details -->
+          {% if project.section_implementation %}
+            <h2 class="title is-4">Implementation Details</h2>
+            <div class="content">
+              {% for section in project.section_implementation %}
+                <article class="media">
+                  <figure class="media-left">
+                    <p class="image is-64x64">
+                      <span class="icon is-large has-text-primary">
+                        <i class="{{ section.icon }}"></i>
+                      </span>
+                    </p>
+                  </figure>
+                  <div class="media-content">
+                    <div class="content">
+                      <p>
+                        <strong>{{ section.title }} </strong>
+                      </p>
+                        {{ section.render_html() | render_jinja }}
+                    </div>
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
           </div>
-        </div>
+        {% endif %}
 
         <!-- Right Sidebar -->
         <div class="column is-4">
@@ -143,92 +149,102 @@
           <div class="box is-fullwidth mb-6">
             <h3 class="title is-5">Technology Stack</h3>
             <div class="menu">
-              <p class="menu-label">
-                Languages
-              </p>
-              <ul class="menu-list">
-                {% for technology in project.languages%}
-                  <li class="is-flex is-align-items-center">
-                    <figure class="image is-rounded is-16x16">
-                      <img src="{{ technology.image_url}}" />
-                    </figure>
-                    <a>{{ technology.title }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
-              <p class="menu-label">
-                Backend
-              </p>
-              <ul class="menu-list">
-                {% for technology in project.backend_technologies %}
-                  <li class="is-flex is-align-items-center">
-                    <figure class="image is-rounded is-16x16">
-                      <img src="{{ technology.image_url}}" />
-                    </figure>
-                    <a>{{ technology.title }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
-              <p class="menu-label">
-                Frontend
-              </p>
-              <ul class="menu-list">
-                {% for technology in project.frontend_technologies %}
-                  <li class="is-flex is-align-items-center">
-                    <figure class="image is-rounded is-16x16">
-                      <img src="{{ technology.image_url}}" />
-                    </figure>
-                    <a>{{ technology.title }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
-              <p class="menu-label">
-                DevOps
-              </p>
-              <ul class="menu-list">
-                {% for technology in project.devops_technologies %}
-                  <li class="is-flex is-align-items-center">
-                    <figure class="image is-rounded is-16x16">
-                      <img src="{{ technology.image_url}}" />
-                    </figure>
-                    <a>{{ technology.title }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
+              {% if project.languages %}
+                <p class="menu-label">
+                  Languages
+                </p>
+                <ul class="menu-list">
+                  {% for technology in project.languages %}
+                    <li class="is-flex is-align-items-center">
+                      <figure class="image is-rounded is-16x16">
+                        <img src="{{ technology.image_url}}" />
+                      </figure>
+                      <a>{{ technology.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% if project.backend_technologies %}
+                <p class="menu-label">
+                  Backend
+                </p>
+                <ul class="menu-list">
+                  {% for technology in project.backend_technologies %}
+                    <li class="is-flex is-align-items-center">
+                      <figure class="image is-rounded is-16x16">
+                        <img src="{{ technology.image_url}}" />
+                      </figure>
+                      <a>{{ technology.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% if project.frontend_technologies %}
+                <p class="menu-label">
+                  Frontend
+                </p>
+                <ul class="menu-list">
+                  {% for technology in project.frontend_technologies %}
+                    <li class="is-flex is-align-items-center">
+                      <figure class="image is-rounded is-16x16">
+                        <img src="{{ technology.image_url}}" />
+                      </figure>
+                      <a>{{ technology.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+              {% if project.devops_technologies %}
+                <p class="menu-label">
+                  DevOps
+                </p>
+                <ul class="menu-list">
+                  {% for technology in project.devops_technologies %}
+                    <li class="is-flex is-align-items-center">
+                      <figure class="image is-rounded is-16x16">
+                        <img src="{{ technology.image_url}}" />
+                      </figure>
+                      <a>{{ technology.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </div>
           </div>
         </div>
       </div>
       <!-- Next Steps -->
-      <div class="notification is-light">
-        <h2 class="title is-4 mb-3">Exploratory Avenues</h2>
-        <div class="content">
-          <div class="columns">
-            {% for next in project.section_exploration %}
-              <div class="column">
-                <p class="has-text-weight-semibold mb-2">{{ next.title }}</p>
-                {{ next.render_html() | render_jinja }}
-              </div>
-            {% endfor %}
+      {% if project.section_exploration %}
+        <div class="notification is-light">
+          <h2 class="title is-4 mb-3">Exploratory Avenues</h2>
+          <div class="content">
+            <div class="columns">
+              {% for next in project.section_exploration %}
+                <div class="column">
+                  <p class="has-text-weight-semibold mb-2">{{ next.title }}</p>
+                  {{ next.render_html() | render_jinja }}
+                </div>
+              {% endfor %}
+            </div>
           </div>
         </div>
-      </div>
+      {% endif %}
     </div>
   </section>
   {% if project.related_content %}
-  <section class="section is medium">
-    <div class="container">
-      <div class="subtitle">
-        Related Content
+    <section class="section is medium">
+      <div class="container">
+        <div class="subtitle">
+          Related Content
+        </div>
+        <div class="columns is-centered">
+          {% for content in project.related_content %}
+            <div class="column is-one-fifth">
+              {% include '_related_content_card.html' %}
+            </div>
+          {% endfor %}
+        </div>
       </div>
-      <div class="columns is-centered">
-        {% for content in project.related_content %}
-          <div class="column is-one-fifth">
-            {% include '_related_content_card.html' %}
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
+    </section>
   {% endif %}
 {% endblock %}
