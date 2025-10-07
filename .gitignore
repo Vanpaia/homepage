@@ -9,7 +9,6 @@ venv/
 .venv/
 
 # Logs and databases
-migrations/
 *.log
 *.sqlite
 *.db
