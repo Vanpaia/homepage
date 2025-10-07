@@ -1,4 +1,7 @@
-2025-10-02 22:09:55,554 ERROR: Exception on /blog [GET] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
+2025-10-02 22:33:46,714 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:35:22,343 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:37:23,324 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:37:25,334 ERROR: Exception on /blog [GET] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -33,18 +36,45 @@ Traceback (most recent call last):
   File "/home/hagen/Projects/homepage/app/templates/blog.html", line 21, in block 'content'
     {% include '_card.html' %}
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/app/templates/_card.html", line 18, in top-level template code
-    <time datetime="{{ post.timestamp.strftime('%Y-%m-%d') }}">{{ post.timestamp.strftime('%A, %d %B %Y') }}</time>
+  File "/home/hagen/Projects/homepage/app/templates/_card.html", line 7, in top-level template code
+    src="{{ url_for('static', image='img/technology/javascript.js') }}"
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
-    return getattr(obj, attribute)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.UndefinedError: 'app.models.BlogPost object' has no attribute 'timestamp'
-2025-10-02 22:11:55,961 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:12:53,386 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:14:12,086 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:17:04,548 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:17:42,571 ERROR: Exception on /blog/1-US-democratic-backsliding-and-a-warning-against-Chat-Control [GET] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'static' with values ['image']. Did you forget to specify values ['filename']?
+2025-10-02 22:37:46,818 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:38:34,070 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:38:56,476 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:40:13,223 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:41:58,893 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:42:39,722 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:43:23,928 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:43:45,383 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:44:26,280 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 23:03:08,529 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 23:03:44,246 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 23:06:34,723 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 23:07:59,028 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 23:11:52,228 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 23:14:12,484 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-03 06:02:29,909 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-03 06:30:04,438 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-03 06:33:15,193 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-03 06:33:52,054 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-03 06:34:49,976 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-03 06:35:47,571 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 06:46:54,956 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 06:48:08,061 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 06:49:43,124 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 07:00:24,579 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 07:01:06,046 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 07:01:06,818 ERROR: Exception on /index [GET] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -58,78 +88,30 @@ Traceback (most recent call last):
   File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/app/main/routes.py", line 24, in blogpost
-    return render_template('blogpost.html', body=post_body, post=post_content, title='Blog')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
+  File "/home/hagen/Projects/homepage/app/main/routes.py", line 14, in index
+    return render_template('index.html', deployed_projects=deployed_projects, latest_posts=latest_posts, featured_projects=featured_projects, title='Home')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 771, in compile
+    self.handle_exception(source=source_hint)
   File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/home/hagen/Projects/homepage/app/templates/blogpost.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/hagen/Projects/homepage/app/templates/base.html", line 60, in top-level template code
-    {% block content %}{% endblock %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/app/templates/blogpost.html", line 23, in block 'content'
-    Published on {{ post.timestamp.strftime('%A, %d %B %Y') }}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
-    return getattr(obj, attribute)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.UndefinedError: 'app.models.BlogPost object' has no attribute 'timestamp'
-2025-10-02 22:17:42,886 ERROR: Exception on /blog/1-US-democratic-backsliding-and-a-warning-against-Chat-Control [GET] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
-Traceback (most recent call last):
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/app/main/routes.py", line 24, in blogpost
-    return render_template('blogpost.html', body=post_body, post=post_content, title='Blog')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/hagen/Projects/homepage/app/templates/blogpost.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/hagen/Projects/homepage/app/templates/base.html", line 60, in top-level template code
-    {% block content %}{% endblock %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/app/templates/blogpost.html", line 23, in block 'content'
-    Published on {{ post.timestamp.strftime('%A, %d %B %Y') }}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
-    return getattr(obj, attribute)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.UndefinedError: 'app.models.BlogPost object' has no attribute 'timestamp'
-2025-10-02 22:18:17,724 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:19:08,150 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:19:38,153 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:20:19,298 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:20:29,879 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:21:39,486 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:24:22,267 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:25:03,334 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:26:33,340 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:28:45,157 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
-2025-10-02 22:32:02,972 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+  File "/home/hagen/Projects/homepage/app/templates/index.html", line 128, in template
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'.
+2025-10-05 07:01:25,511 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-05 07:20:16,144 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]

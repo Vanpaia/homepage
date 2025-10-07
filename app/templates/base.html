@@ -4,6 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{% block meta_description %}{{ default_meta_description }}{% endblock %}">
+  <meta property="og:site_name" content="Hagen's Homepage"/>
+
+  {% block social_meta %}
+      <meta property="og:url" content="{{ url_for('main.index', _external=True) }}" />
+      <meta property="og:type" content="website" />
+  {% endblock %}
   <title>{{ title or "Flask + Bulma" }}</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">

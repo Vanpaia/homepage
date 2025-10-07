@@ -5,7 +5,6 @@ from app.models import DevelopmentStatus, SectionType, TechnologyType, ContentTy
 from app.models import Project, ProjectFeature, ProjectSection, Technology, RelatedContent
 app = create_app(config_class=Config)
 with app.app_context():
-    '''
     feature1 = ProjectFeature(title="Official API integration", status=DevelopmentStatus.COMPLETED, order=1)
     feature2 = ProjectFeature(title="Live updated metro map", status=DevelopmentStatus.COMPLETED, order=2) 
     feature3 = ProjectFeature(title="Flyout for metro timetable", status=DevelopmentStatus.IN_PROGRESS, order=3) 
@@ -36,14 +35,7 @@ This project serves as an introduction to JavaScript for me. I realised I need J
     db.session.commit()
 
     technologies = []
-    technologies.append(Technology.query.filter_by(title="JavaScript 18.19.x").first())
-    technologies.append(Technology.query.filter_by(title="nginx 1.18.x").first())
     technologies.append(Technology(title="Bun 1.2.x", type=TechnologyType("backend"), image="bun.png", order=1))
     project.technologies = technologies
-    db.session.commit()
-
-    ''' 
-    tech = Technology.query.filter_by(title="JavaScript 18.19.x").first()
-    tech.title = "JavaScript (ES2021)"
     db.session.commit()
 

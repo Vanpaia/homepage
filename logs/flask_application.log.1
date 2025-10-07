@@ -1,7 +1,96 @@
-2025-10-06 19:01:48,111 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
-2025-10-06 19:05:11,372 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
-2025-10-06 19:05:17,219 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
-2025-10-06 19:05:23,601 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
-2025-10-06 19:06:45,740 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
-2025-10-06 19:06:55,579 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
-2025-10-06 19:08:10,142 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:44:48,779 ERROR: Exception on /blog/1-US-democratic-backsliding-and-a-warning-against-Chat-Control [GET] [in /home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/hagen/homepage/app/main/routes.py", line 34, in blogpost
+    return render_template('blogpost.html', body=post_body, post=post_content, title='Blog')
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/hagen/homepage/app/templates/blogpost.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/hagen/homepage/app/templates/base.html", line 53, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/hagen/homepage/app/templates/blogpost.html", line 38, in block 'content'
+    {% for content in project.related_content %}
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'project' is undefined
+2025-10-06 19:45:23,343 ERROR: Exception on /blog/1-US-democratic-backsliding-and-a-warning-against-Chat-Control [GET] [in /home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/hagen/homepage/app/main/routes.py", line 34, in blogpost
+    return render_template('blogpost.html', body=post_body, post=post_content, title='Blog')
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/hagen/homepage/app/templates/blogpost.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/hagen/homepage/app/templates/base.html", line 53, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/hagen/homepage/app/templates/blogpost.html", line 38, in block 'content'
+    {% for content in project.related_content %}
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'project' is undefined
+2025-10-06 19:48:02,543 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:48:02,565 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:48:02,629 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:48:02,649 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:49:54,321 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:49:54,423 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:49:54,496 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:49:54,560 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:53:18,771 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:55:52,922 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:58:59,929 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:03:58,847 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:04:59,558 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:38:35,096 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:41:18,521 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:41:50,655 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:44:58,656 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:49:24,973 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:52:29,570 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-07 09:49:32,183 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:40]
+2025-10-07 09:49:38,429 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:40]
+2025-10-07 09:50:06,866 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:40]
+2025-10-07 10:00:26,838 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:40]
+2025-10-07 10:12:39,209 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:40]
+2025-10-07 10:13:50,605 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:40]
+2025-10-07 10:14:33,864 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:40]
+2025-10-07 08:28:52,100 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-07 08:28:52,140 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-07 08:28:52,220 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-07 08:28:52,229 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-07 08:31:03,152 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-07 08:34:28,856 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-07 08:34:43,690 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-07 10:49:41,692 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-07 13:37:34,174 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-07 13:38:36,557 INFO: API access: POST /api/projects from 127.0.0.1 [in /home/hagen/homepage/app/api/routes.py:50]
+2025-10-07 14:15:30,287 INFO: API access: POST /api/projects from 127.0.0.1 [in /home/hagen/homepage/app/api/routes.py:50]
+2025-10-07 16:33:01,131 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:40]
