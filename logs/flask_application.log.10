@@ -1,12 +1,16 @@
-2025-10-02 09:46:29,476 ERROR: Exception on /portfolio/1 [GET] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
-Traceback (most recent call last):
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/sql/sqltypes.py", line 1709, in _object_value_for_elem
-    return self._object_lookup[elem]  # type: ignore[return-value]
-           ~~~~~~~~~~~~~~~~~~~^^^^^^
-KeyError: 'completed'
-
-The above exception was the direct cause of the following exception:
-
+2025-10-02 15:53:28,134 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 15:57:39,122 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 16:29:44,947 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 16:30:30,484 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 16:31:18,779 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 16:37:34,060 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 20:58:29,039 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:02:34,168 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:05:06,406 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:05:19,955 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:05:32,958 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:13:51,193 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:13:55,364 ERROR: Exception on /portfolio/1 [GET] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -20,52 +24,77 @@ Traceback (most recent call last):
   File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/app/main/routes.py", line 53, in project
-    print(project_data)
-  File "/home/hagen/Projects/homepage/app/models.py", line 363, in __str__
-    return f'{self.id} {self.title} {self.subtitle} {self.status} {self.extract} {self.github_url} {self.deployment_url} {self.image} {self.featured_order} {self.sections} {self.features} {self.tags} {self.technologies}'
-                                                                                                                                                                             ^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 569, in __get__
-    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 1096, in get
-    value = self._fire_loader_callables(state, key, passive)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 1131, in _fire_loader_callables
-    return self.callable_(state, passive)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/strategies.py", line 978, in _load_for_state
-    return self._emit_lazyload(
-           ^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/strategies.py", line 1145, in _emit_lazyload
-    result = result.unique().scalars().all()
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 1774, in all
-    return self._allrows()
-           ^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
-    rows = self._fetchall_impl()
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 1681, in _fetchall_impl
-    return self._real_result._fetchall_impl()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 2275, in _fetchall_impl
-    return list(self.iterator)
-           ^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 220, in chunks
-    fetch = cursor._raw_all_rows()
-            ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
-    return [make_row(row) for row in rows]
-            ^^^^^^^^^^^^^
-  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
-  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/sql/sqltypes.py", line 1829, in process
-    value = self._object_value_for_elem(value)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/sql/sqltypes.py", line 1711, in _object_value_for_elem
-    raise LookupError(
-LookupError: 'completed' is not among the defined enum values. Enum name: technologytype. Possible values: BACKEND, FRONTEND, DEVOPS, ..., TOOLING
-2025-10-02 09:48:35,827 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
-2025-10-02 09:48:46,282 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
-2025-10-02 09:48:50,232 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:35]
+  File "/home/hagen/Projects/homepage/app/main/routes.py", line 56, in project
+    return render_template('project.html', project=project_data, title='Portfolio')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/hagen/Projects/homepage/app/templates/project.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/hagen/Projects/homepage/app/templates/base.html", line 60, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/app/templates/project.html", line 153, in block 'content'
+    <img src="{{ technology.thumbnail_url }}" />
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/app/models.py", line 224, in thumbnail_url
+    return url_for('static', filename=self.thumbnail_url , _external=True)
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/app/models.py", line 224, in thumbnail_url
+    return url_for('static', filename=self.thumbnail_url , _external=True)
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/app/models.py", line 224, in thumbnail_url
+    return url_for('static', filename=self.thumbnail_url , _external=True)
+                                      ^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 974 more times]
+RecursionError: maximum recursion depth exceeded
+2025-10-02 21:16:33,964 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:18:06,675 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:21:36,795 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:21:45,253 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:45:02,110 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:45:10,166 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:45:16,106 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:45:41,077 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:48:16,118 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:48:19,376 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:48:23,260 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:48:26,860 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:49:51,821 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:52:32,300 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:52:37,605 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:52:42,432 ERROR: Exception on /portfolio/1 [GET] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hagen/Projects/homepage/app/main/routes.py", line 54, in project
+    print(x.name)
+          ^^^^^^
+AttributeError: 'Technology' object has no attribute 'name'
+2025-10-02 21:53:39,544 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:56:00,909 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 21:58:22,958 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:00:22,963 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:08:07,359 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]
+2025-10-02 22:08:28,246 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:37]

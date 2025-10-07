@@ -7,7 +7,6 @@ from markupsafe import Markup
 from markdown import markdown
 from functools import wraps
 from datetime import datetime, timezone
-from config import SECRET_KEY, RATE_LIMIT, RATE_WINDOW, ENABLE_RATE_LIMITING
 from collections import defaultdict
 from time import time
 
@@ -15,7 +14,7 @@ request_counts = defaultdict(list)
 
 def rate_limit_check():
     """Simple rate limiting by IP address"""
-    if not ENABLE_RATE_LIMITING.lower() == 'true':
+    if not current_app.config['ENABLE_RATE_LIMITING'].lower() == 'true':
         return True
     
     ip = request.remote_addr
@@ -23,10 +22,10 @@ def rate_limit_check():
     
     # Clean old requests
     request_counts[ip] = [req_time for req_time in request_counts[ip] 
-                          if now - req_time < int(RATE_WINDOW)]
+                          if now - req_time < int(current_app.config['RATE_WINDOW'])]
     
     # Check limit
-    if len(request_counts[ip]) >= int(RATE_LIMIT):
+    if len(request_counts[ip]) >= int(current_app.config['RATE_LIMIT']):
         return False
     
     # Add current request
@@ -45,7 +44,7 @@ def require_api_key(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         api_key = request.headers.get('X-API-Key')
-        if not api_key or api_key != SECRET_KEY:
+        if not api_key or api_key != current_app.config['SECRET_KEY']:
             return jsonify({'error': 'Invalid or missing API key'}), 401
         
         current_app.logger.info(f"API access: {request.method} {request.path} from {request.remote_addr}")

@@ -312,14 +312,14 @@ class ProjectFeature(db.Model):
     Attributes:
         id (int): Primary key, auto-incrementing post ID
         project_id (int | None): Foreign key, refering to the related Project 
-        title (str): Category title, max 32 characters
+        title (str): Category title, max 64 characters
         status (DevelopmentStatus): DevelopmentStatus is an Enum
         order (int | None): Interger determining the order of entry
     """
     __tablename__ = 'project_feature'
     
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    title: Mapped[str] = mapped_column(String(32), nullable=False)
+    title: Mapped[str] = mapped_column(String(64), nullable=False)
     status: Mapped[DevelopmentStatus] = mapped_column(
         SQLEnum(DevelopmentStatus), 
         nullable=False,

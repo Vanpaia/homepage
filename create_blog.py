@@ -7,7 +7,7 @@ app = create_app(config_class=Config)
 
 with app.app_context():
     u = BlogPost(title="US democratic backsliding and a warning against Chat Control",
-                 subtitle="How large scale surveillance and AI was quickly turned against expression in the country that prides itself on freedom of speech.",
+                 subtitle="How large scale surveillance and AI was quickly turned against expression in the country that prides itself on freedom of speech",
                  body="""
 In March 2025, a French scientist was [denied entry](https://www.theguardian.com/us-news/2025/mar/19/trump-musk-french-scientist-detained) to the US, after the messages on his phone were searched and criticism of the Trump administration was found by border agents. Google and Meta are [handing over](https://theintercept.com/2025/09/16/google-facebook-subpoena-ice-students-gaza/) social media, email and location data to immigration officers of protesters against Israel’s war on Gaza. Both [US colleges](https://pulitzercenter.org/stories/tracked-how-colleges-use-ai-monitor-student-protests) and [US authorities](https://www.amnesty.org/en/latest/news/2025/08/usa-global-tech-made-by-palantir-and-babel-street-pose-surveillance-threats-to-pro-palestine-student-protestors-migrants/) are using invasive AI-powered technologies to track activists and migrants, making use of large combined databases of scraped data.
 

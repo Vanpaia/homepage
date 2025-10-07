@@ -1,125 +1,77 @@
-2025-10-06 11:44:05,816 ERROR: Exception on /api/projects/3 [DELETE] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
+2025-10-06 19:44:48,779 ERROR: Exception on /blog/1-US-democratic-backsliding-and-a-warning-against-Chat-Control [GET] [in /home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py:875]
 Traceback (most recent call last):
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/sql/sqltypes.py", line 1709, in _object_value_for_elem
-    return self._object_lookup[elem]  # type: ignore[return-value]
-           ~~~~~~~~~~~~~~~~~~~^^^^^^
-KeyError: 'in-progress'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
     rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
     rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/app/api/routes.py", line 53, in decorated_function
-    return f(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/app/api/routes.py", line 41, in decorated_function
-    return f(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/app/api/routes.py", line 329, in delete_project
-    db.session.delete(project)
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/scoping.py", line 674, in delete
-    return self._proxied.delete(instance)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3542, in delete
-    self._delete_impl(state, instance, head=True)
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3569, in _delete_impl
-    cascade_states = list(
-                     ^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/mapper.py", line 3983, in cascade_iterator
-    queue = deque(
-            ^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/relationships.py", line 1525, in cascade_iterator
-    tuples = self._value_as_iterable(
-             ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/relationships.py", line 1495, in _value_as_iterable
-    x = impl.get(state, dict_, passive=passive)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 1096, in get
-    value = self._fire_loader_callables(state, key, passive)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 1131, in _fire_loader_callables
-    return self.callable_(state, passive)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/strategies.py", line 978, in _load_for_state
-    return self._emit_lazyload(
-           ^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/strategies.py", line 1145, in _emit_lazyload
-    result = result.unique().scalars().all()
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 1774, in all
-    return self._allrows()
-           ^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 548, in _allrows
-    rows = self._fetchall_impl()
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 1681, in _fetchall_impl
-    return self._real_result._fetchall_impl()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 2275, in _fetchall_impl
-    return list(self.iterator)
-           ^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 220, in chunks
-    fetch = cursor._raw_all_rows()
-            ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 541, in _raw_all_rows
-    return [make_row(row) for row in rows]
-            ^^^^^^^^^^^^^
-  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 22, in sqlalchemy.cyextension.resultproxy.BaseRow.__init__
-  File "lib/sqlalchemy/cyextension/resultproxy.pyx", line 79, in sqlalchemy.cyextension.resultproxy._apply_processors
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/sql/sqltypes.py", line 1829, in process
-    value = self._object_value_for_elem(value)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/sqlalchemy/sql/sqltypes.py", line 1711, in _object_value_for_elem
-    raise LookupError(
-LookupError: 'in-progress' is not among the defined enum values. Enum name: developmentstatus. Possible values: PLANNED, IN_PROGRESS, COMPLETED, ON_HOLD
-2025-10-06 11:45:00,168 INFO: API access: POST /api/projects from 127.0.0.1 [in /home/hagen/Projects/homepage/app/api/routes.py:51]
-2025-10-06 11:45:00,187 INFO: API access: POST /api/projects/6/features from 127.0.0.1 [in /home/hagen/Projects/homepage/app/api/routes.py:51]
-2025-10-06 11:46:39,727 INFO: app startup [in /home/hagen/Projects/homepage/app/__init__.py:40]
-2025-10-06 11:46:48,616 INFO: API access: POST /api/projects from 127.0.0.1 [in /home/hagen/Projects/homepage/app/api/routes.py:51]
-2025-10-06 11:46:48,656 INFO: API access: POST /api/projects/7/features from 127.0.0.1 [in /home/hagen/Projects/homepage/app/api/routes.py:51]
-2025-10-06 11:46:48,678 INFO: API access: PATCH /api/projects/7/features/2 from 127.0.0.1 [in /home/hagen/Projects/homepage/app/api/routes.py:51]
-2025-10-06 11:46:48,689 INFO: API access: POST /api/projects/7/sections from 127.0.0.1 [in /home/hagen/Projects/homepage/app/api/routes.py:51]
-2025-10-06 11:46:48,692 ERROR: Exception on /api/projects/7/sections [POST] [in /home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py:875]
+  File "/home/hagen/homepage/app/main/routes.py", line 34, in blogpost
+    return render_template('blogpost.html', body=post_body, post=post_content, title='Blog')
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/hagen/homepage/app/templates/blogpost.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/hagen/homepage/app/templates/base.html", line 53, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/hagen/homepage/app/templates/blogpost.html", line 38, in block 'content'
+    {% for content in project.related_content %}
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'project' is undefined
+2025-10-06 19:45:23,343 ERROR: Exception on /blog/1-US-democratic-backsliding-and-a-warning-against-Chat-Control [GET] [in /home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py:875]
 Traceback (most recent call last):
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
     rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
     rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/app/api/routes.py", line 53, in decorated_function
-    return f(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/app/api/routes.py", line 41, in decorated_function
-    return f(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^
-  File "/home/hagen/Projects/homepage/app/api/routes.py", line 421, in add_project_section
-    type=SectionType(data['type']),
-         ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.12/enum.py", line 757, in __call__
-    return cls.__new__(cls, value)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib/python3.12/enum.py", line 1171, in __new__
-    raise ve_exc
-ValueError: 'implementation' is not a valid SectionType
-2025-10-06 11:50:11,044 INFO: API access: POST /api/projects from 127.0.0.1 [in /home/hagen/Projects/homepage/app/api/routes.py:51]
-2025-10-06 11:50:11,063 INFO: API access: POST /api/projects/8/features from 127.0.0.1 [in /home/hagen/Projects/homepage/app/api/routes.py:51]
-2025-10-06 11:50:11,080 INFO: API access: PATCH /api/projects/8/features/2 from 127.0.0.1 [in /home/hagen/Projects/homepage/app/api/routes.py:51]
-2025-10-06 11:50:11,089 INFO: API access: POST /api/projects/8/sections from 127.0.0.1 [in /home/hagen/Projects/homepage/app/api/routes.py:51]
+  File "/home/hagen/homepage/app/main/routes.py", line 34, in blogpost
+    return render_template('blogpost.html', body=post_body, post=post_content, title='Blog')
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/hagen/homepage/app/templates/blogpost.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/hagen/homepage/app/templates/base.html", line 53, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/hagen/homepage/app/templates/blogpost.html", line 38, in block 'content'
+    {% for content in project.related_content %}
+  File "/home/hagen/homepage/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'project' is undefined
+2025-10-06 19:48:02,543 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:48:02,565 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:48:02,629 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:48:02,649 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:49:54,321 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:49:54,423 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:49:54,496 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:49:54,560 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:53:18,771 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:55:52,922 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 19:58:59,929 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:03:58,847 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:04:59,558 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:38:35,096 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:41:18,521 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:41:50,655 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:44:58,656 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:49:24,973 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
+2025-10-06 20:52:29,570 INFO: app startup [in /home/hagen/homepage/app/__init__.py:40]
